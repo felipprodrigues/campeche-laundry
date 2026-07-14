@@ -14,9 +14,23 @@ function App() {
         <div className="mb-4">
           <Header />
         </div>
-        {tab === "maquinas" && <MachinesScreen />}
-        {tab === "calendario" && <CalendarScreen />}
-        {tab === "informacoes" && <InfoScreen />}
+        <div key={tab} className="animate-in fade-in slide-in-from-bottom-1 duration-200">
+          {tab === "maquinas" && <MachinesScreen />}
+          {tab === "calendario" && <CalendarScreen />}
+          {tab === "informacoes" && <InfoScreen />}
+        </div>
+
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Feito por{" "}
+          <a
+            href="https://github.com/felipprodrigues"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Felipe Rodrigues
+          </a>
+        </p>
       </div>
       <BottomTabBar active={tab} onChange={setTab} />
     </div>

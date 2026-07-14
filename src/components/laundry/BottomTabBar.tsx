@@ -18,7 +18,7 @@ export function BottomTabBar({ active, onChange }: { active: Tab; onChange: (tab
             key={id}
             type="button"
             onClick={() => onChange(id)}
-            className={`flex flex-1 flex-col items-center gap-1 py-2.5 text-xs ${
+            className={`flex flex-1 flex-col items-center gap-1 py-2.5 text-xs transition-colors duration-200 ${
               isActive ? "text-blue-600 dark:text-blue-400" : "text-muted-foreground"
             }`}
           >

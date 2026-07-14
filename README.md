@@ -25,3 +25,7 @@ Edite `src/schedule.ts` — nenhum outro arquivo precisa mudar:
 4. Compartilhe o link gerado (ex.: `https://seu-projeto.vercel.app`) no grupo do WhatsApp do condomínio.
 
 Qualquer alteração enviada para a branch principal do GitHub gera um novo deploy automaticamente.
+
+## Autor
+
+Feito por [Felipe Rodrigues](https://github.com/felipprodrigues).
