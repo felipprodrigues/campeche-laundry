@@ -90,6 +90,18 @@ export function InfoScreen() {
         </span>
         <ChevronRight className="size-5 shrink-0" />
       </a>
+
+      <p className="mt-4 text-center text-xs text-muted-foreground">
+        Developed by{" "}
+        <a
+          href="https://github.com/felipprodrigues"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          Felipe Rodrigues
+        </a>
+      </p>
     </div>
   );
 }
