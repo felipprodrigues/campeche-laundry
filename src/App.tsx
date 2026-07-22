@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/laundry/Header";
 import { BottomTabBar, type Tab } from "@/components/laundry/BottomTabBar";
+import { WhatsAppCard } from "@/components/laundry/WhatsAppCard";
 import { MachinesScreen } from "@/screens/MachinesScreen";
 import { CalendarScreen } from "@/screens/CalendarScreen";
 import { InfoScreen } from "@/screens/InfoScreen";
@@ -22,6 +23,20 @@ function App() {
           )}
           {tab === "informacoes" && <InfoScreen />}
         </div>
+        <div className="mt-4">
+          <WhatsAppCard />
+        </div>
+        <p className="mt-4 text-center text-[10px] text-muted-foreground/60">
+          Developed by{" "}
+          <a
+            href="https://github.com/felipprodrigues"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground/60 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Felipe Rodrigues
+          </a>
+        </p>
       </div>
       <BottomTabBar active={tab} onChange={setTab} />
       <Analytics />
