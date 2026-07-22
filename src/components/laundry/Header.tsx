@@ -10,8 +10,8 @@ const sectionLabels: Record<Tab, string> = {
 export function Header({ tab }: { tab: Tab }) {
   return (
     <header className="flex items-center gap-3">
-      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#8A9467]">
-        <LaundryLogo className="size-7 text-[#F5F3E7]" />
+      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-blue-600 dark:bg-blue-500">
+        <LaundryLogo className="size-7 text-white" />
       </div>
       <div>
         <p className="text-xs font-semibold tracking-wide text-blue-600 uppercase dark:text-blue-400">

@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, ChevronRight, Home, Recycle, Truck, VolumeX } from "lucide-react";
-import { WhatsAppIcon } from "@/components/laundry/WhatsAppIcon";
+import { AlertTriangle, Home, Recycle, Truck, VolumeX } from "lucide-react";
 
 export function InfoScreen() {
   return (
@@ -60,7 +59,7 @@ export function InfoScreen() {
             </li>
             <li>
               <strong className="text-foreground">Varais:</strong> permitidos apenas varais de
-              chão.
+              chão dentro do apartamento.
             </li>
           </ul>
         </CardContent>
@@ -97,34 +96,6 @@ export function InfoScreen() {
           </ul>
         </CardContent>
       </Card>
-
-      <a
-        href="https://wa.me/5548996140713"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-3 rounded-xl bg-[#25D366] px-4 py-3 text-white shadow-sm transition-opacity active:opacity-90"
-      >
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/20">
-          <WhatsAppIcon className="size-6" />
-        </span>
-        <span className="flex-1">
-          <p className="font-bold">Falar com a administração</p>
-          <p className="text-sm text-white/90">Em caso de dúvidas, chame no WhatsApp</p>
-        </span>
-        <ChevronRight className="size-5 shrink-0" />
-      </a>
-
-      <p className="-mt-2 text-center text-[10px] text-muted-foreground/60">
-        Developed by{" "}
-        <a
-          href="https://github.com/felipprodrigues"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground/60 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
-        >
-          Felipe Rodrigues
-        </a>
-      </p>
     </div>
   );
 }

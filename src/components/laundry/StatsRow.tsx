@@ -33,10 +33,10 @@ export function StatsRow({
       bg: "bg-blue-100 dark:bg-blue-900/40",
     },
     {
-      icon: <Users className="size-4 text-purple-600 dark:text-purple-400" />,
+      icon: <Users className="size-4 text-slate-600 dark:text-slate-400" />,
       value: apartamentos,
       label: "apartamentos",
-      bg: "bg-purple-100 dark:bg-purple-900/40",
+      bg: "bg-slate-100 dark:bg-slate-800",
     },
     {
       icon: <CalendarClock className="size-4 text-amber-600 dark:text-amber-400" />,
