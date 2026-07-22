@@ -17,8 +17,7 @@ export interface ScheduleRule {
 // Same hours apply every day of the week. Ordered list of rules over time;
 // add a new entry whenever the condo announces a change.
 export const scheduleRules: ScheduleRule[] = [
-  { validFrom: null, validUntil: "2026-09-27", open: "06:00", close: "19:30" },
-  { validFrom: "2026-09-28", validUntil: null, open: "06:00", close: "00:00" },
+  { validFrom: null, validUntil: null, open: "06:00", close: "00:00" },
 ];
 
 export const weeklyLimitPerUnit = 2;

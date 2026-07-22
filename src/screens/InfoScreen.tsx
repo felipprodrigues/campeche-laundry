@@ -1,77 +1,100 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, ChevronRight } from "lucide-react";
-import { SoapIllustration } from "@/components/laundry/SoapIllustration";
+import { AlertTriangle, ChevronRight, Home, Recycle, Truck, VolumeX } from "lucide-react";
 import { WhatsAppIcon } from "@/components/laundry/WhatsAppIcon";
-import { useLaundryStatus } from "@/useLaundryStatus";
-
-function formatBR(dateStr: string): string {
-  const [year, month, day] = dateStr.split("-");
-  return `${day}/${month}/${year}`;
-}
 
 export function InfoScreen() {
-  const { isOpen, openTime, closeTime, upcomingRule } = useLaundryStatus();
-
   return (
     <div className="flex flex-col gap-4">
-      {upcomingRule && (
-        <p className="rounded-lg bg-blue-50 px-3 py-2 text-xs text-blue-700 dark:bg-blue-950/30 dark:text-blue-300">
-          A partir de <strong>{formatBR(upcomingRule.validFrom!)}</strong>, o horário passa a ser{" "}
-          <strong>
-            {upcomingRule.open} – {upcomingRule.close}
-          </strong>
-          .
-        </p>
-      )}
+      <p className="px-1 text-sm font-bold">Silêncio</p>
 
-      <Card>
-        <CardContent className="flex flex-col items-center gap-3 py-2 text-center">
-          <Badge
-            className={
-              isOpen
-                ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-300"
-                : "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300"
-            }
-          >
-            <span
-              className={`mr-1 size-1.5 rounded-full ${isOpen ? "bg-green-600 dark:bg-green-400" : "bg-red-600 dark:bg-red-400"}`}
-            />
-            {isOpen ? "Aberta agora" : "Fechada agora"}
-          </Badge>
-          <p className="text-3xl font-bold tracking-tight">
-            {openTime} – {closeTime}
-          </p>
-          <p className="text-xs text-muted-foreground">Todos os dias da semana</p>
-        </CardContent>
-      </Card>
-
-      <Card className="overflow-hidden">
-        <CardContent className="flex items-center gap-3 py-3">
-          <div className="flex-1">
-            <p className="font-bold text-green-700 dark:text-green-400">Traga seu produto</p>
-            <p className="text-sm text-muted-foreground">
-              Cada unidade deve levar seu próprio sabão e amaciante para manter o espaço limpo e
-              organizado.
-            </p>
-          </div>
-          <SoapIllustration className="h-20 w-20 shrink-0" />
-        </CardContent>
-      </Card>
-
-      <Card>
+      <Card className="border-l-4 border-l-indigo-400 dark:border-l-indigo-500">
         <CardContent className="flex flex-col gap-3 py-3">
-          <div className="flex items-center gap-2">
-            <AlertTriangle className="size-5 shrink-0 text-amber-600 dark:text-amber-400" />
-            <p className="font-bold">Lavanderia</p>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Seguir cronograma de uso por apartamento/horários, localizado na lavanderia.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Sujeito a multa de <strong className="text-foreground">R$100,00</strong>.
-          </p>
-          <p className="text-sm text-muted-foreground">Agradecemos a compreensão de todos</p>
+          <VolumeX className="size-5 shrink-0 text-indigo-600 dark:text-indigo-400" />
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <li>
+              <strong className="text-foreground">Seg. a Sex.:</strong> 22h às 7h
+            </li>
+            <li>
+              <strong className="text-foreground">Sáb. e Dom.:</strong> 22h às 8h
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <p className="px-1 text-sm font-bold">Lixo</p>
+
+      <Card className="border-l-4 border-l-orange-400 dark:border-l-orange-500">
+        <CardContent className="flex flex-col gap-3 py-3">
+          <Recycle className="size-5 shrink-0 text-orange-600 dark:text-orange-400" />
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <li>Segundas, Quartas e Sextas.</li>
+            <li>Contentores na calçada até 16h.</li>
+            <li>
+              <strong className="text-foreground">Sem contentores:</strong> apenas sacos pretos.
+            </li>
+            <li>
+              <strong className="text-foreground">Com contentores:</strong> sacos pretos ou
+              sacolas.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <p className="px-1 text-sm font-bold">Convivência</p>
+
+      <Card className="border-l-4 border-l-teal-400 dark:border-l-teal-500">
+        <CardContent className="flex flex-col gap-3 py-3">
+          <Home className="size-5 shrink-0 text-teal-600 dark:text-teal-400" />
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <li>
+              <strong className="text-foreground">Objetos:</strong> não deixe objetos em frente ao
+              apartamento.
+            </li>
+            <li>
+              <strong className="text-foreground">Visitantes:</strong> cada morador é responsável
+              pela conduta de seus visitantes.
+            </li>
+            <li>
+              <strong className="text-foreground">Áreas comuns:</strong> não é permitida a
+              permanência de animais de estimação ou bens pessoais.
+            </li>
+            <li>
+              <strong className="text-foreground">Varais:</strong> permitidos apenas varais de
+              chão.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <p className="px-1 text-sm font-bold">Mudanças e carga/descarga</p>
+
+      <Card className="border-l-4 border-l-sky-400 dark:border-l-sky-500">
+        <CardContent className="flex flex-col gap-3 py-3">
+          <Truck className="size-5 shrink-0 text-sky-600 dark:text-sky-400" />
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <li>
+              <strong className="text-foreground">Seg. a Sáb.:</strong> 8h às 20h
+            </li>
+            <li>Não permitidas aos domingos e feriados.</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <p className="px-1 text-sm font-bold">Proibições</p>
+
+      <Card className="border-l-4 border-l-red-400 dark:border-l-red-500">
+        <CardContent className="flex flex-col gap-3 py-3">
+          <AlertTriangle className="size-5 shrink-0 text-red-600 dark:text-red-400" />
+          <ul className="space-y-1.5 text-sm text-muted-foreground">
+            <li>
+              <strong className="text-foreground">Cigarros pela janela:</strong> proibido atirar
+              fósforos, pontas de cigarro ou quaisquer objetos pelas portas e janelas.
+            </li>
+            <li>
+              <strong className="text-foreground">Entupimentos:</strong> não coloque em vasos
+              sanitários, pias e tanques objetos que possam causar entupimento.
+            </li>
+          </ul>
         </CardContent>
       </Card>
 
@@ -91,13 +114,13 @@ export function InfoScreen() {
         <ChevronRight className="size-5 shrink-0" />
       </a>
 
-      <p className="mt-4 text-center text-xs text-muted-foreground">
+      <p className="-mt-2 text-center text-[10px] text-muted-foreground/60">
         Developed by{" "}
         <a
           href="https://github.com/felipprodrigues"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+          className="text-muted-foreground/60 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
         >
           Felipe Rodrigues
         </a>

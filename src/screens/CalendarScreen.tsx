@@ -1,13 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { WashingMachine } from "lucide-react";
+import { InfoBanner } from "@/components/laundry/InfoBanner";
 import { dailySlots, machines, weekdayDisplayOrder, weekdayShortLabels } from "@/schedule";
 import { useNow } from "@/useNow";
 
-export function CalendarScreen() {
+export function CalendarScreen({ onNavigateToMachines }: { onNavigateToMachines: () => void }) {
   const now = useNow();
 
   return (
     <div className="flex flex-col gap-3">
+      <InfoBanner onClick={onNavigateToMachines} />
+
       <p className="text-sm text-muted-foreground">
         Rotina semanal fixa — mesma distribuição toda semana.
       </p>

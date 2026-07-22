@@ -7,7 +7,7 @@ describe("BottomTabBar", () => {
   it("renders all three tabs", () => {
     render(<BottomTabBar active="maquinas" onChange={vi.fn()} />);
 
-    expect(screen.getByText("Máquinas")).toBeInTheDocument();
+    expect(screen.getByText("Lavanderia")).toBeInTheDocument();
     expect(screen.getByText("Calendário")).toBeInTheDocument();
     expect(screen.getByText("Informações")).toBeInTheDocument();
   });
@@ -16,7 +16,7 @@ describe("BottomTabBar", () => {
     render(<BottomTabBar active="calendario" onChange={vi.fn()} />);
 
     const activeButton = screen.getByText("Calendário").closest("button")!;
-    const inactiveButton = screen.getByText("Máquinas").closest("button")!;
+    const inactiveButton = screen.getByText("Lavanderia").closest("button")!;
 
     expect(activeButton.className).toMatch(/text-blue-600/);
     expect(inactiveButton.className).not.toMatch(/text-blue-600/);

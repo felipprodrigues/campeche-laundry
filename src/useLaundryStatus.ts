@@ -12,18 +12,10 @@ function getActiveRule(dateStr: string): ScheduleRule {
   return rule ?? scheduleRules[scheduleRules.length - 1];
 }
 
-function getNextRule(dateStr: string, currentRule: ScheduleRule): ScheduleRule | null {
-  const currentIndex = scheduleRules.indexOf(currentRule);
-  const next = scheduleRules[currentIndex + 1];
-  if (!next || !next.validFrom) return null;
-  return next.validFrom > dateStr ? next : null;
-}
-
 export interface LaundryStatus {
   isOpen: boolean;
   openTime: string;
   closeTime: string;
-  upcomingRule: ScheduleRule | null;
 }
 
 export function useLaundryStatus(): LaundryStatus {
@@ -43,7 +35,6 @@ export function useLaundryStatus(): LaundryStatus {
     isOpen: minutesSinceMidnight >= openMin && minutesSinceMidnight < closeMin,
     openTime: activeRule.open,
     closeTime: activeRule.close,
-    upcomingRule: getNextRule(dateStr, activeRule),
   };
 }
 

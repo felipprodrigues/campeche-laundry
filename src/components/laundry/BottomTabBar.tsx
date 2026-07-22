@@ -3,9 +3,9 @@ import { WashingMachine, CalendarDays, Info } from "lucide-react";
 export type Tab = "maquinas" | "calendario" | "informacoes";
 
 const tabs: { id: Tab; label: string; icon: typeof WashingMachine }[] = [
-  { id: "maquinas", label: "Máquinas", icon: WashingMachine },
-  { id: "calendario", label: "Calendário", icon: CalendarDays },
   { id: "informacoes", label: "Informações", icon: Info },
+  { id: "maquinas", label: "Lavanderia", icon: WashingMachine },
+  { id: "calendario", label: "Calendário", icon: CalendarDays },
 ];
 
 export function BottomTabBar({ active, onChange }: { active: Tab; onChange: (tab: Tab) => void }) {
